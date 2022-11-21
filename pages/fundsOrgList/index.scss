@@ -1,0 +1,89 @@
+/* pages/searchResult/index.wxss */
+.app-container {
+  --td-search-bg-color: #ffffff;
+}
+.filter_tab t-tab-panel {
+  text-align: center;
+  justify-content: center;
+  background-color: #F6F7FB;
+  color: rgba(0, 0, 0, 0.26);
+  padding-bottom: 56rpx;
+  padding-top: 18rpx;
+}
+
+.empty-cls {
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.external-class {
+  width: 236rpx;
+  height: 180rpx;
+}
+
+.news_list {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0px 6rpx 10rpx 2rpx rgba(237, 236, 235, 1);
+  border-radius: 14rpx;
+  padding: 26rpx;
+  box-sizing: border-box;
+}
+
+.news_list+.news_list {
+  margin-top: 28rpx;
+}
+
+.news_list .news_image {
+  width: 236rpx;
+  height: 154rpx;
+}
+
+.news_list .news_con {
+  flex: 1;
+  margin-left: 28rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.news_list .news_con .title {
+  flex: 1;
+}
+
+.news_list .news_con .desc {
+  color: #727171;
+}
+.total{
+  text-align: left;
+  margin-bottom: 18rpx;
+}
+.total .total_con{
+  color: #EE793F;
+}
+
+// 月新增
+.news_list .news_li_con{
+  flex: 1; 
+}
+.news_list .news_li_con .title{
+  flex: initial;
+  margin-bottom: 20rpx;
+}
+.news_list .news_image {
+  width: 220rpx;
+  height: 128rpx;
+  background-color: #fafafa;
+}
+.news_list .news_li_con .desc{
+  padding-top: 6rpx;
+}
+.t-tabs__item--top:nth-child(n+3),
+.t-tabs__item--bottom:nth-child(n+3) {
+  text-align: right;
+}
+.filter_tab .t-tabs__wrapper{
+  width: 700rpx;
+}

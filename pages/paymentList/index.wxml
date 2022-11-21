@@ -1,0 +1,19 @@
+<view class="app-container">
+  <view class="flex middle between card nav" bindtap = "handleSearchRoute">
+    <view class="header_title">大额支付事件</view>
+    <view class="flex middle desc">
+      筛选
+      <t-icon name="chevron-right" size="22rpx" data-name="chevron-right"/>
+    </view>
+  </view>
+  <view class="card card-y" wx:for = "{{ payList }}">
+    <view class="flex between card_header card_yue">
+      <view class="title">{{ item.mujmch }}</view>
+    </view>
+    <view class = "desc"><text class="label">资助金额</text>{{ item.zizhje }} 元</view>
+    <view class = "desc"><text class="label">资助年度</text>{{ item.zizhshj }}</view>
+    <view class = "desc"><text class="label">资助用途</text>{{ item.zizhyt || '--' }}</view>
+  </view>
+  <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if = "{{ payList.length == 0 }}"/>
+  <view wx:elif="{{payList.length == total}}" class = "text-center more">没有更多数据</view>
+</view>

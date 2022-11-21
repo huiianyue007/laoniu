@@ -1,0 +1,12 @@
+<view class="app-container">
+  <view class="app-card">
+    <view class="title">
+      请选择反馈类型
+    </view>
+    <t-button t-class="external-class" id = "文字错误" bindtap="handleClick" size="large">文字错误</t-button>
+    <t-button t-class="external-class" id = "技术错误" bindtap="handleClick" size="large">技术错误</t-button>
+    <t-button t-class="external-class" id = "数据错误" bindtap="handleClick" size="large">数据错误</t-button>
+    <t-button t-class="external-class" id = "其他错误" bindtap="handleClick" size="large">其他错误</t-button>
+    <t-button t-class="external-class" id = "意见错误" bindtap="handleClick" size="large">意见错误</t-button>
+  </view>
+</view>

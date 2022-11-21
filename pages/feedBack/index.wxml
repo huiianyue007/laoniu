@@ -1,0 +1,11 @@
+<view class="app-container">
+  <view class="card card-int">
+    <t-input value="{{ biaot }}" data-id = "biaot" bindchange="onInput" placeholder="请填写标题" />
+    <t-cell title="{{ yijlx }}" hover arrow jump-type = "redirectTo" url = "/pages/feedType/index"/>
+    <t-input value="{{ youxdzh }}" data-id = "youxdzh" bindchange="onInput" placeholder="请填写您的邮箱地址" />
+    <t-textarea value="{{ yijnr }}" data-id = "yijnr" bindchange="onInput" placeholder="请填写10个字以上的问题描述以便我们提供更好的帮助" />
+  </view>
+  <view class="text-center btn">
+    <t-button t-class="external-class" theme="primary" block bindtap="handleSubmit">提交</t-button>
+  </view>
+</view>

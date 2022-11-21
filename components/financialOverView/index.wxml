@@ -1,0 +1,10 @@
+<view class="card">
+  <slot>
+    <view class="title">
+        财务概况
+    </view>
+  </slot>
+  <view class = "chart_con">
+    <ec-canvas id="mychart-dom-area" id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>

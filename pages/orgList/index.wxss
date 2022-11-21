@@ -1,0 +1,64 @@
+/* pages/orgList/index.wxss */
+.header_title {
+  text-align: center;
+  font-size: 32rpx;
+
+  font-weight: bold;
+  color: #06041C;
+  line-height: 28rpx;
+  margin-bottom: 26rpx;
+}
+
+.cishan_li {
+  padding: 28rpx;
+  background: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0px 6rpx 10rpx 2rpx rgba(237, 236, 235, 1);
+  font-size: 24rpx;
+}
+
+.title {
+  font-size: 28rpx;
+
+  font-weight: bold;
+  color: #000000;
+  line-height: 32rpx;
+  margin-bottom: 26rpx;
+}
+
+.label {
+  color: #ACACAE;
+}
+
+.cishan_li+.cishan_li {
+  margin-top: 28rpx;
+}
+
+.cishan_li .cs_image {
+  width: 212rpx;
+  height: 138rpx;
+}
+
+.cishan_li .cs_con {
+  margin-left: 28rpx;
+  flex: 1;
+}
+
+.cishan_li .cs_con .desc {
+  color: #EE793F;
+}
+
+.cishan_li .cs_con .desc+.desc {
+  margin-top: 10rpx;
+}
+
+
+/* 月增加 */
+.cishan_y .title{
+  font-size: 28rpx;
+}
+.cishan_y .cs_image{
+  width: 220rpx;
+  height: 128rpx;
+  background-color: #fafafa;
+}

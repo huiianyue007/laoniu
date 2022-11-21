@@ -1,0 +1,38 @@
+<view class="page app-container">
+  <view class="app-card app-yuecard">
+    <view class="header_title yue_title">{{ baseInfo.xiangmmch }}</view>
+    <view class="flex middle tag_con">
+      <lingy-tag wx:for="{{ baseInfo.guanzhly }}" class="tag_li" title="{{ item }}" />
+    </view>
+    <view class=" flex middle middle project_nav">
+      <view class="desc">
+        <text class="label">地点</text>
+        {{ baseInfo.nianddd || '--' }}
+      </view>
+    </view>
+    <view class=" flex middle middle project_nav">
+      <view class="desc">
+        <text class="label">时间</text>
+        {{ baseInfo.xiangmnd || '--' }}
+      </view>
+    </view>
+    <view class="nav">
+      <view class="nav_li">
+        <view class="flex middle label">
+          <image src="https://laoniu.yishan.cloud/static/sr.png" class="icon"></image>
+          年度收入
+        </view>
+        <view class="desc">{{ baseInfo.niandshr || '--' }}元</view>
+      </view>
+      <view class="split"></view>
+      <view class="nav_li">
+        <view class="flex middle label">
+          <image src="https://laoniu.yishan.cloud/static/zc.png" class="icon"></image>
+          年度支出
+        </view>
+        <view class="desc">{{ baseInfo.niandzhch || '--' }}元</view>
+      </view>
+    </view>
+    <rich-text class="content" nodes="{{ baseInfo.xiangmjj || '--' }}"></rich-text>
+  </view>
+</view>

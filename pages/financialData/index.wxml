@@ -1,0 +1,97 @@
+<view class="app-container">
+  <financialOverView data="{{ caiwndList }}" initFlag="{{ false }}">
+    <view class="title">财务数据</view>
+  </financialOverView>
+  <view class="search_card">
+    <t-cell arrow bind:tap="handleAction">
+      <view class="title" slot="title">查询年度</view>
+      <view class="desc" slot="note">{{ niandLabel }}</view>
+    </t-cell>
+  </view>
+  <view class="mt14 fiancial card">
+    <view class="fiancial_li">
+      <view class="tip">
+        <image src="https://laoniu.yishan.cloud/static/finan/icon1.png" class="icon" />
+        总资产
+      </view>
+      <view class="title">
+        <text class="label">{{ financeData.zongzch }}</text>
+        万元
+      </view>
+    </view>
+    <view class="fiancial_li">
+      <view class="tip">
+        <image src="https://laoniu.yishan.cloud/static/finan/icon4.png" class="icon" />
+        净资产
+      </view>
+      <view class="title">
+        <text class="label">{{ financeData.jingzch }}</text>
+        万元
+      </view>
+    </view>
+    <view class="fiancial_li">
+      <view class="tip">
+        <image src="https://laoniu.yishan.cloud/static/finan/icon6.png" class="icon" />
+        收入合计
+      </view>
+      <view class="title">
+        <text class="label">{{ financeData.shourhj }}</text>
+        万元
+      </view>
+    </view>
+    <view class="fiancial_li">
+      <view class="tip">
+        <image src="https://laoniu.yishan.cloud/static/finan/icon8.png" class="icon" />
+        支出合计
+      </view>
+      <view class="title">
+        <text class="label">{{ financeData.zhichhj }}</text>
+        万元
+      </view>
+    </view>
+    <view class="fiancial_li">
+      <view class="tip">
+        <image src="https://laoniu.yishan.cloud/static/finan/icon5.png" class="icon" />
+        捐赠收入
+      </view>
+      <view class="title">
+        <text class="label">{{ financeData.juanzshr }}</text>
+        万元
+      </view>
+    </view>
+    <view class="fiancial_li">
+      <view class="tip">
+        <image src="https://laoniu.yishan.cloud/static/finan/icon3.png" class="icon" />
+        管理费用
+      </view>
+      <view class="title">
+        <text class="label">{{ financeData.guanly }}</text>
+        万元
+      </view>
+    </view>
+    <view class="fiancial_li">
+      <view class="tip">
+        <image src="https://laoniu.yishan.cloud/static/finan/icon2.png" class="icon" />
+        公益事业支出
+      </view>
+      <view class="title">
+        <text class="label">{{ financeData.gongyshyzhch }}</text>
+        万元
+      </view>
+    </view>
+    <view class="fiancial_li">
+      <view class="tip">
+        <image src="https://laoniu.yishan.cloud/static/finan/icon7.png" class="icon" />
+        投资收益
+      </view>
+      <view class="title">
+        <text class="label">{{ financeData.touzshy }}</text>
+        万元
+      </view>
+    </view>
+  </view>
+  <areaConc class="areaConc" unit="万元" niand="{{ niand }}" data="{{ ywhdly }}" initFlag="{{ false }}">
+    <view class="title">业务活动支出</view>
+  </areaConc>
+  <t-action-sheet id="t-action-sheet" bind:selected="handleSelected" bind:cancel="handlecancel" />
+</view>

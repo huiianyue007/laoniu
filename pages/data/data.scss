@@ -1,0 +1,68 @@
+.page{
+  padding-bottom: calc(env(safe-area-inset-bottom) + 104rpx);
+}
+.nav{
+  margin-top: 28rpx;
+  .nav_li{
+    width: calc(50% - 14rpx);
+    height: 176rpx;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #fff;
+    padding: 40rpx 30rpx;
+    box-sizing: border-box;
+    font-size: 20rpx;
+    line-height: 1em;
+    margin-bottom: 20rpx;
+    &:nth-child(n+3) {
+      margin-top: 26rpx;
+    }
+    .nav_li_title{
+      margin-bottom: 16rpx;
+    }
+    .nav_desc_con{
+      font-size: 52rpx;
+      line-height: 52rpx;
+      margin-right: 6rpx;
+    }
+  }
+}
+.card{
+  margin-top: 28rpx;
+}
+.tip{
+  font-size: 24rpx;
+  margin-bottom: 28rpx;
+  .icon{
+    width: 28rpx;
+    margin-right: 12rpx;
+  }
+}
+.news_con{
+  margin-top: 20rpx;
+}
+.news_image{
+  width: 236rpx;
+  height: 154rpx;
+}
+
+
+// 月新增
+.news_list .news_li_con{
+  flex: 1; 
+}
+.news_list .news_li_con .title{
+  flex: initial;
+  margin-bottom: 20rpx;
+}
+.news_list .news_image {
+  width: 220rpx;
+  height: 128rpx;
+  background-color: #fafafa;
+}
+.news_list .news_li_con .desc{
+  padding-top: 6rpx;
+}
+.moreyue{
+  margin-bottom: 20rpx;
+}

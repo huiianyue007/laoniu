@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="card header" bindtap="login">
+    <image src="{{ imgurl }}" class="image" />
+    <text class="title">{{ title }}</text>
+  </view>
+  <view class="cardyue">
+    <view class="card">
+      <t-cell title="我的关注" hover arrow id="/pages/myAttention/index" bindtap="handleRoute">
+        <image class="icon" src="https://laoniu.yishan.cloud/static/user/star.png" slot="left-icon"></image>
+      </t-cell>
+      <t-cell title="我的设置" hover arrow bordered="{{ false }}" id="/pages/setUp/index" bindtap="handleRoute">
+        <image class="icon" src="https://laoniu.yishan.cloud/static/user/set.png" slot="left-icon"></image>
+      </t-cell>
+    </view>
+    <view class="card">
+      <t-cell title="意见反馈" hover arrow id="/pages/feedBack/index" bindtap="handleRoute">
+        <image class="icon" src="https://laoniu.yishan.cloud/static/user/res.png" slot="left-icon"></image>
+      </t-cell>
+      <t-cell title="数据说明" hover arrow url="/pages/dataDesc/index">
+        <image class="icon" src="https://laoniu.yishan.cloud/static/user/data.png" slot="left-icon"></image>
+      </t-cell>
+      <t-cell title="关于我们" hover arrow bordered="{{ false }}" url="/pages/aboutUs/index">
+        <image class="icon" src="https://laoniu.yishan.cloud/static/user/about.png" slot="left-icon"></image>
+      </t-cell>
+    </view>
+  </view>
+</view>

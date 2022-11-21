@@ -1,0 +1,19 @@
+<view class="app-container">
+  <view class="app-card">
+    <image src="https://laoniu.yishan.cloud/static/about/logo.png" class="logo"></image>
+    <view class="title">简介</view>
+    <view class="desc">
+      北京老牛兄妹公益基金会（“老牛兄妹基金会”）是由牛犇先生和牛琼女士（蒙牛乳业集团创始人，前董事长、总裁牛根生先生的子女）捐资发起，于2015年3月19日成立的从事社会公益慈善活动的非公募家族基金会；是牛氏家族继老牛基金会之后设立的又一家公益慈善组织；登记机关为北京市民政局,经北京市社会组织评估审核委员会审议通过为 4A级社会组织。
+    </view>
+    <view class="desc">使命：关注下一代发展，以有效慈善推动社会进步</view>
+    <view class="desc">愿景：创新慈善，永续传承</view>
+    <view class="desc">
+      理事会由9名理事组成，设监事1名。理事长牛犇先生、副理事长牛琼女士、秘书长陈霄鹏女士，理事黄斯沉先生、刘洲鸿先生、郭素女士、陶泽先生、杨品艳女士、岳帅凯先生；监事程会田女士。
+    </view>
+    <view class="desc">执行机构为项目管理中心，下设项目部、财务部及行政部。</view>
+    <view class="title">联系电话</view>
+    <view class="desc">010-53510199</view>
+    <view class="title">联系地址</view>
+    <view class="desc">北京市朝阳区恒通国际商务园</view>
+  </view>
+</view>

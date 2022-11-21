@@ -1,0 +1,12 @@
+<view class="card area_con">
+  <slot>
+    <view class="title">关注领域</view>
+  </slot>
+  <view class = "chart_con" hidden="{{ chartData.length == 0 }}">
+    <ec-canvas id="mychart-dom-area" id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <view hidden="{{ chartData.length > 0 }}">
+    <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" />
+  </view>
+
+</view>

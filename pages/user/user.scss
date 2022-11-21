@@ -1,0 +1,44 @@
+/* pages/user/user.wxss */
+page {
+  background-color: #F6F7FB;
+}
+.page{
+  padding: 28rpx;
+}
+
+.header .image{
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+  background-color: #f67;
+  margin-right: 28rpx;
+}
+.header .title{
+  margin-bottom: 0;
+}
+.icon{
+  width: 28rpx;
+  height: 28rpx;
+}
+.card{
+  padding: 0;
+  overflow: hidden;
+  &+ .card{
+    margin-top: 28rpx;
+  }
+}
+.header{
+  padding: 28rpx;
+  display: flex;
+  align-items: center;
+}
+
+// 月新增
+.cardyue{
+  .card{
+    padding: 0rpx;
+  }
+  .card:first-child{
+    margin-top: 28rpx;
+  }
+}

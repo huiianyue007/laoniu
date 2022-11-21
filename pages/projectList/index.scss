@@ -1,0 +1,94 @@
+/* pages/projectList/index.wxss */
+
+.header_title {
+  font-size: 32rpx;
+
+  font-weight: bold;
+  color: #06041C;
+  line-height: 28rpx;
+}
+
+.nav {
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #06041C;
+  line-height: 28px;
+}
+
+.nav .desc {
+  margin-top: 0;
+}
+
+.card+.card {
+  margin-top: 28rpx;
+}
+
+.title {
+
+  font-weight: bold;
+  color: #000000;
+  font-size: 32rpx;
+}
+
+.project_li .title {
+  margin-bottom: 18rpx;
+}
+
+.project_li .project_nav .desc {
+  margin-left: 26rpx;
+}
+
+.project_nav {
+  margin: -14rpx -14rpx 12rpx -14rpx;
+  .tag_li{
+    margin: 14rpx;
+  }
+}
+
+.desc {
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #06041C;
+  line-height: 32rpx;
+}
+.label{
+  font-size: 12px;
+color: #06041C;
+line-height: 18px;
+margin-right: 12rpx;
+}
+.more {
+  margin-top: 26rpx;
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #ACACAE;
+  line-height: 28px;
+}
+
+.project_con {
+  font-size: 11px;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #727171;
+  line-height: 22px;
+}
+
+/* 月增加 */
+.project_y .title{
+  font-size: 28rpx;
+}
+.nd_time{
+  margin-bottom: 15rpx;
+}
+.project_tz{
+  margin-bottom: 15rpx;
+}
+.pro_yue .title{
+  margin-bottom: 10rpx;
+}
+.project_tz .tag_li + .tag_li{
+  margin-left: 20rpx;
+}

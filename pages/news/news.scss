@@ -1,0 +1,131 @@
+/* pages/news/news.wxss */
+page {
+  background-color: #F6F7FB;
+}
+
+.page {
+  padding: 28rpx 28rpx calc(env(safe-area-inset-bottom) + 132rpx);
+  box-sizing: border-box;
+  --td-search-bg-color: #fff;
+  .title {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    font-weight: bold;
+    color: #06041C;
+    line-height: 35rpx;
+    margin: 20rpx 0 12rpx;
+  }
+  .desc {
+    font-size: 24rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 12rpx;
+  }
+  .custom-tabs {
+    --td-tab-nav-bg-color: #F6F7FB;
+    --td-tab-item-active-color: #06041C;
+    --td-tab-track-color: #EE793F;
+    .t-tabs__item {
+      min-width: 180rpx;
+    }
+    .t-tabs__item--top,.t-tabs__item--bottom{
+      min-width: 180rpx;
+    }
+  }
+  
+  .custom-tabs t-tab-panel {
+    text-align: center;
+    justify-content: center;
+    background-color: #F6F7FB;
+    color: rgba(0, 0, 0, 0.26);
+  }
+  
+  .empty-cls {
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .external-class {
+    width: 724rpx;
+    height: 404rpx;
+  }
+  
+  .list_card {
+    background-color: #fff;
+    box-shadow: 0px 12rpx 12rpx 2rpx #EDECEB;
+    border-radius: 16rpx;
+    padding: 28rpx;
+    margin-top: 28rpx;
+  }
+  
+  .list_card .news_list {
+    display: flex;
+  }
+  
+  .list_card .news_list+.news_list {
+    margin-top: 28rpx;
+  }
+  
+  .list_card .news_list .news_image {
+    width: 236rpx;
+    height: 180rpx;
+  }
+  
+  .list_card .news_list .news_con {
+    flex: 1;
+    margin-left: 28rpx;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .list_card .news_list .news_con .title {
+    flex: 1;
+  }
+  
+  .list_card .news_list .news_con .desc {
+    color: #727171;
+  }
+  .search {
+    box-shadow: 0rpx 6rpx 12rpx 2rpx #EDECEB;
+  }
+  
+  .news_card {
+    margin-top: 28rpx;
+    background-color: #fff;
+    text-align: left;
+    padding: 0;
+    .card_con {
+      padding: 0 28rpx 28rpx;
+      box-sizing: border-box;
+    }
+  }
+}
+
+
+// 月调整
+.page{
+  .desc + .desc{
+    color: #acacae;
+  }
+  .list_card{
+    .news_list{
+      .news_con{
+        .desc + .desc{
+          color: #acacae;
+        }
+      }
+    }
+  }
+}
+
+.custom-tabs .t-tabs__wrapper{
+  width: 700rpx;
+}
+
+.page-sea{
+  padding-top: 0;
+}

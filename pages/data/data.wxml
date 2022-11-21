@@ -1,0 +1,90 @@
+<view class="page container">
+  <searchBar placeholder="中国家族公益慈善数据中心" class="search"></searchBar>
+  <view class="flex wrap between nav">
+    <view class="nav_li" style="background-image: url('https://laoniu.yishan.cloud/static/data/card-1.png');">
+      <view class="nav_li_title">家族基金会数量</view>
+      <view class="nav_desc">
+        <text class="nav_desc_con">{{ jiazNum }}</text>
+        家
+      </view>
+    </view>
+    <view class="nav_li" style="background-image: url('https://laoniu.yishan.cloud/static/data/card-2.png');">
+      <view class="nav_li_title">认定为慈善组织</view>
+      <view class="nav_desc">
+        <text class="nav_desc_con">{{ cishzzhNum }}</text>
+        家
+      </view>
+    </view>
+    <view class="nav_li" style="background-image: url('https://laoniu.yishan.cloud/static/data/card-3.png');">
+      <view class="nav_li_title">家族基金会总资产</view>
+      <view class="nav_desc">
+        <text class="nav_desc_con">{{ zongzch }}亿</text>
+        元
+      </view>
+    </view>
+    <view class="nav_li" style="background-image: url('https://laoniu.yishan.cloud/static/data/card-4.png');">
+      <view class="nav_li_title">累计慈善捐赠</view>
+      <view class="nav_desc">
+        <text class="nav_desc_con">{{ leijgyzhc }}亿</text>
+        元
+      </view>
+    </view>
+  </view>
+  <navigator url="/pages/dataDesc/index" class="flex middle right tip">
+    <image src="https://laoniu.yishan.cloud/static/tip.png" mode="widthFix" class="icon" />
+    数据说明
+  </navigator>
+  <geographical />
+  <financialOverView class="mt14">
+    <view class="title">财务概况</view>
+  </financialOverView>
+  <areaConc class="mt14" unit="亿元">
+    <view class="title">关注领域</view>
+  </areaConc>
+  <t-tabs defaultValue="{{1}}" t-class="mt14 custom-tabs" border="{{ false }}" bind:change="handleTabChange">
+    <t-tab-panel label="中国家族基金会" value="1">
+      <view class="news_con">
+        <view class="news_cards" wx:if="{{ famList.length > 0}}">
+          <view class="news_list card" wx:for="{{ famList }}" wx:key="index" id="{{ item.id }}" bindtap="handleFamRoute">
+            <!-- mode 之前用 aspectFill ，改成了 aspectFit -->
+            <t-image t-class="news_image" src="{{item.logo}}" mode="aspectFit" error="slot">
+              <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+            </t-image>
+            <view class="news_li_con">
+              <view class="title">{{ item.mingch }}</view>
+              <view class="desc">公益支出：{{ item.zongzch || '--' }}万元</view>
+              <view class="desc">统计年度：{{ item.niand }}</view>
+              <view class="desc">成立时间：{{ item.chenglshj || '--' }}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{ total > famList.length }}" class="more moreyue" block bindtap="getMoreFamData" data-type="0">
+          查看更多
+        </view>
+        <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ famList.length == 0 }}" />
+      </view>
+    </t-tab-panel>
+    <t-tab-panel label="慈善组织" value="2">
+      <view class="news_con">
+        <view class="news_cards" wx:if="{{ newsList.length > 0 }}">
+          <view class="news_list card" wx:for="{{ newsList }}" wx:key="index" id="{{ item.id }}" bindtap="handleNewsRoute">
+            <!-- mode 之前用 aspectFill ，改成了 aspectFit -->
+            <t-image t-class="news_image" src="{{item.logo}}" mode="aspectFit" error="slot">
+              <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+            </t-image>
+            <view class="news_li_con">
+              <view class="title">{{ item.mingch }}</view>
+              <view class="desc">捐赠收入：{{ item.juanzshr || '--' }}万元</view>
+              <view class="desc">统计年度：{{ item.niand }}</view>
+              <view class="desc">成立时间：{{ item.chenglshj || '--' }}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{ total > newsList.length }}" class="more moreyue" bindtap="getMoreFamData" data-type="1">
+          查看更多
+        </view>
+        <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ newsList.length == 0 }}" />
+      </view>
+    </t-tab-panel>
+  </t-tabs>
+</view>

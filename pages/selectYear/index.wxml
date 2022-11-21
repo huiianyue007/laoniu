@@ -1,0 +1,32 @@
+<view class="page">
+  <view class="tabs">
+    <view class="tab_left">
+      <view class="tab_li {{ value == '0' ? 'active' : '' }}" id="0" bindtap="handleChange">
+        年份
+      </view>
+      <view class="tab_li {{ value == '1' ? 'active' : '' }}" id="1" bindtap="handleChange">
+        活动领域
+      </view>
+    </view>
+    <view class="tab_content" wx:if="{{ value == '0' }}">
+      <view class="title">年份</view>
+      <view class="btn_group">
+        <view wx:for="{{ timeList }}" bindtap="handleCheckCity" data-name="{{ item.label }}" data-value="{{ item.value }}" class="btn_li {{ city == item.value ? 'active' : '' }}">
+          {{ item.label }}
+        </view>
+      </view>
+    </view>
+    <view class="tab_content" wx:elif="{{ value == '1' }}">
+      <view class="title">活动领域</view>
+      <view class="btn_group">
+        <view bindtap="handleCheckLingy" class="btn_li {{ item.active ? 'active': '' }}" data-name="{{ item.value }}" wx:for="{{ lingyList }}">
+          {{ item.lingy }}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="flex footer">
+    <view class="btn" bindtap="handleCancel">清除</view>
+    <view class="fill primary btn" bindtap="handleSubmit">确定</view>
+  </view>
+</view>

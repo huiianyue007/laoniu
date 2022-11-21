@@ -1,0 +1,65 @@
+<view class="app-container">
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image src="{{ imgurl }}" class="img" wx:if="{{ imgurl }}"></image>
+    <image src="https://laoniu.yishan.cloud/static/1091665842119_.pic@2x.png" wx:else class="img"></image>
+  </button>
+  <input type="nickname" class="title" placeholder="请输入昵称" bindinput="handleInput" />
+  <view class="text-center btn" bindtap="getUserInfo">
+    <button class="external-class" open-type="{{ title && imgurl ?  'getPhoneNumber' : '' }}" bindgetphonenumber="handleSubmit">
+      <t-icon name="logo-wechat" data-name="logo-wechat" class="icon" size="36rpx"></t-icon>
+      微信手机号快捷登录
+    </button>
+  </view>
+  <view class="desc">
+    登录代表您已同意
+    <navigator url="/pages/userAgree/index" class="strong">用户服务协议</navigator>
+    、
+    <navigator url="/pages/privacyPolicy/index" class="strong">隐私政策</navigator>
+    和
+    <navigator url="/pages/dataDesc/index" class="strong">数据说明</navigator>
+  </view>
+  <t-toast id="t-toast" />
+  <t-popup visible="{{visible}}" placement="bottom">
+    <view class="prop">
+      <view class="prop_title" slot="title">请填写信息</view>
+      <t-input value="{{ formData.name }}" placeholder="请填写您的名字(必填)" bind:change="handleChangeName" />
+      <t-input value="{{ formData.jig }}" placeholder="请填写公司名称(必填)" bind:change="handleChangeJig" />
+      <t-input value="{{ formData.zhiw }}" placeholder="请填写职务名称" bind:change="handleChangeZhiw" />
+      <t-cell arrow bindtap="handleSelect">
+        <view slot="title">
+          <text wx:if="{{ formData.guanzhly.length == 0 }}">请选择您关注的领域(可多选）</text>
+          <view class="tag_li" wx:for="{{ formData.guanzhly }}" wx:key="index">
+            {{ item }}
+            <t-icon name="close" size="12" data-name="close" id="{{ index }}" capture-catch:tap="handleDel" />
+          </view>
+        </view>
+      </t-cell>
+      <view class="prop_bottom text-center">
+        <button class="prop_btn" size="small" variant="outline" theme="primary" bindtap="handleCancel">
+          取消
+        </button>
+        <button class="prop_btn primary" size="small" theme="primary" bindtap="handleFormSubmit">
+          确定
+        </button>
+      </view>
+    </view>
+  </t-popup>
+  <t-popup visible="{{ selectVisible}}" placement="bottom">
+    <view class="prop">
+      <view class="prop_title">请选择您的关注领域</view>
+      <scroll-view class="scroll_wrap" scroll-y>
+        <t-checkbox-group value="{{ formSelectedData.guanzhly }}" bind:change="handleGroupChange">
+          <t-checkbox value="{{ item }}" color="#EE793F" label="{{ item }}" align="right" wx:for="{{ guanzhlyList }}" wx:key="index" />
+        </t-checkbox-group>
+      </scroll-view>
+      <view class="prop_bottom text-center">
+        <button class="prop_btn" size="small" variant="outline" bindtap="handleSelectCheckCancle" theme="primary">
+          取消
+        </button>
+        <button class="prop_btn primary" size="small" bindtap="handleSelectCheckSubmit" theme="primary">
+          确定
+        </button>
+      </view>
+    </view>
+  </t-popup>
+</view>

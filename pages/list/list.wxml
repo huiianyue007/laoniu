@@ -1,0 +1,96 @@
+<view class="page">
+  <!-- <searchBar placeholder="家族公益慈善榜单" class="search"></searchBar> -->
+  <view class="search_card search_sea">
+    <t-cell arrow bind:tap="handleAction">
+      <view class="title" slot="title">各分领域排名</view>
+      <view class="desc" slot="note">{{ niandLabel }}</view>
+    </t-cell>
+  </view>
+  <t-tabs value="{{ filedValue }}" t-class="custom-tabs" class="tabs" bind:change="handleFiledChange">
+    <t-tab-panel label="{{item}}" value="{{item}}" wx:for="{{areaLi}}" wx:key="index" wx:for-item="item">
+      <t-loading theme="circular" size="40rpx" wx:if="{{ topLoading }}"></t-loading>
+      <view class="news_cards" wx:elif="{{ filedData.length > 0 }}">
+        <view class="card" wx:for="{{ filedData }}" wx:key="index" id="{{ item.id }}" bindtap="handleFamRoute">
+          <view class="news_list">
+            <view class="tip {{ index < 3 ? 'active' : '' }}">
+              <view class="text">
+                <view class="text-title" wx:if="{{ index < 3 }}">TOP</view>
+                {{ item.index }}
+              </view>
+            </view>
+            <t-image t-class="news_image" src="{{item.logo}}" mode="aspectFit"></t-image>
+            <view class="news_li_con">
+              <view class="title">{{ item.mingch }}</view>
+              <view class="desc">领域支出：{{ item.jine || '--' }}万元</view>
+              <view class="desc">统计年度：{{ item.niand }}</view>
+              <view class="desc">成立时间:{{ item.chenglshj }}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:elif="{{ filedData.length == 0 }}" />
+      <view class="more moreyue" wx:elif="{{ filedTotal > filedData.length }}" bindtap="getMoreFiledData">
+        查看更多
+      </view>
+    </t-tab-panel>
+  </t-tabs>
+  <t-tabs value="{{ accessValue }}" t-class="custom-tabs" class="tabs" bind:change="handleAccessChange">
+    <t-tab-panel label="总资产排名" value="总资产">
+      <t-loading theme="circular" size="40rpx" wx:if="{{ loading }}"></t-loading>
+      <view class="news_cards" wx:if="{{ !loading  && !topLoading && accessData.length > 0 }}">
+        <view class="card" wx:for="{{ accessData }}" wx:key="index" id="{{ item.id }}" bindtap="handleFamRoute">
+          <view class="news_list">
+            <view class="tip {{ index < 3 ? 'active' : '' }}">
+              <view class="text">
+                <view class="text-title" wx:if="{{ index < 3 }}">TOP</view>
+                {{ item.index }}
+              </view>
+            </view>
+            <t-image t-class="news_image" src="{{item.logo}}" mode="aspectFit" error="slot">
+              <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+            </t-image>
+            <view class="news_li_con">
+              <view class="title">{{ item.mingch }}</view>
+              <view class="desc">总资产：{{ item.jine || '--' }}万元</view>
+              <view class="desc">统计年度：{{ item.niand }}</view>
+              <view class="desc">成立时间：{{ item.chenglshj }}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ !loading  && !topLoading && accessData.length == 0 }}" />
+      <view class="more moreyue" wx:elif="{{loading &&  !topLoading &&  accessTotal > accessData.length }}" bindtap="getMoreAccessData">
+        查看更多
+      </view>
+    </t-tab-panel>
+    <t-tab-panel label="公益支出排名" value="公益支出">
+      <t-loading theme="circular" size="40rpx" wx:if="{{ loading }}"></t-loading>
+      <view class="news_cards" wx:if="{{ accessData.length > 0 }}">
+        <view class="card" wx:for="{{ accessData }}" wx:key="index" id="{{ item.id }}" bindtap="handleFamRoute">
+          <view class="news_list">
+            <view class="tip {{ index < 3 ? 'active' : '' }}">
+              <view class="text">
+                <view class="text-title" wx:if="{{ index < 3 }}">TOP</view>
+                {{ item.index }}
+              </view>
+            </view>
+            <t-image t-class="news_image" src="{{item.logo}}" mode="aspectFit" error="slot">
+              <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+            </t-image>
+            <view class="news_li_con">
+              <view class="title">{{ item.mingch }}</view>
+              <view class="desc">公益支出：{{ item.jine || '--' }}万元</view>
+              <view class="desc">统计年度：{{ item.niand }}</view>
+              <view class="desc">成立时间：{{ item.chenglshj }}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ loading && !topLoading && accessData.length == 0 }}" />
+      <view class="more moreyue" wx:elif="{{ !loading  && !topLoading && accessTotal > accessData.length }}" bindtap="getMoreAccessData">
+        查看更多
+      </view>
+    </t-tab-panel>
+  </t-tabs>
+  <t-action-sheet id="t-action-sheet" bind:selected="handleSelected" bind:cancel="handlecancel" />
+</view>

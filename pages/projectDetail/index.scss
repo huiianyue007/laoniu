@@ -1,0 +1,98 @@
+/* pages/projectDetail/index.wxss */
+.app-card {
+  padding: 26rpx;
+  box-sizing: border-content;
+}
+
+.header_title {
+  font-size: 32rpx;
+  font-family: Helvetica-Bold, Helvetica;
+  font-weight: bold;
+  color: #06041C;
+  line-height: 28rpx;
+  margin-bottom: 22rpx;
+}
+
+.desc {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #06041C;
+  line-height: 16px;
+}
+
+.label {
+  color: #ACACAE;
+}
+
+.project_nav .label {
+  margin: 0 10rpx 0 26rpx;
+}
+.tag_con{
+  margin: 18rpx 0 18rpx;
+  .tag_li {
+    margin: 10rpx;
+  }
+}
+.nav {
+  display: flex;
+  margin: 26rpx -26rpx;
+  border: 2rpx solid #F6F7FB;
+  border-left: 0;
+  border-right: 0;
+}
+
+.nav_li {
+  flex: 1;
+  padding: 26rpx;
+}
+
+.nav .split {
+  width: 2rpx;
+  background-color: #F6F7FB;
+}
+
+.nav .nav_li .label {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #ACACAE;
+}
+
+.nav .nav_li .desc {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #06041C;
+  line-height: 46rpx;
+  margin-top: 20rpx;
+}
+
+.nav .icon {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.content {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #727171;
+  line-height: 48rpx;
+}
+
+// 月增加
+.app-yuecard{
+  .yue_title{
+    line-height: 44rpx;
+  }
+}
+.app-yuecard .project_nav .label {
+  margin: 0 10rpx 0 0;
+}
+.app-yuecard .tag_con .tag_li{
+  margin: 0 10rpx 0 0;
+}
+.app-yuecard .desc{
+  margin-top: 20rpx;
+}
+.app-yuecard .tag_con{
+  margin-bottom: 4rpx;
+}

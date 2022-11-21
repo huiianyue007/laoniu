@@ -1,0 +1,37 @@
+<t-tab-bar value="{{ active }}" split="{{ false }}" bindchange="onChange" class="tab-bar">
+  <t-tab-bar-item value="home" class="t-tab-bar-item">
+    <view class="custom-tab-bar-wrapper">
+      <image class="icon" src="https://laoniu.yishan.cloud/static/home-active.png" alt="" wx:if="{{ active == 'home' }}" />
+      <image class="icon" src="https://laoniu.yishan.cloud/static/home.png" alt="" wx:else />
+      <view class="text">首页</view>
+    </view>
+  </t-tab-bar-item>
+  <t-tab-bar-item value="data" class="t-tab-bar-item">
+    <view class="custom-tab-bar-wrapper">
+      <image class="icon" src="https://laoniu.yishan.cloud/static/data-active.png" alt="" wx:if="{{ active == 'data' }}" />
+      <image class="icon" src="https://laoniu.yishan.cloud/static/data.png" alt="" wx:else />
+      <view class="text">数据</view>
+    </view>
+  </t-tab-bar-item>
+  <t-tab-bar-item value="list" class="t-tab-bar-item">
+    <view class="custom-tab-bar-wrapper">
+      <image class="icon" src="https://laoniu.yishan.cloud/static/list-active.png" alt="" wx:if="{{ active == 'list' }}" />
+      <image class="icon" src="https://laoniu.yishan.cloud/static/list.png" alt="" wx:else />
+      <view class="text">榜单</view>
+    </view>
+  </t-tab-bar-item>
+  <t-tab-bar-item value="news" class="t-tab-bar-item">
+    <view class="custom-tab-bar-wrapper">
+      <image class="icon" src="https://laoniu.yishan.cloud/static/news-active.png" alt="" wx:if="{{ active == 'news' }}" />
+      <image class="icon" src="https://laoniu.yishan.cloud/static/news.png" alt="" wx:else />
+      <view class="text">资讯</view>
+    </view>
+  </t-tab-bar-item>
+  <t-tab-bar-item value="user" class="t-tab-bar-item">
+    <view class="custom-tab-bar-wrapper">
+      <image class="icon" src="https://laoniu.yishan.cloud/static/user-active.png" alt="" wx:if="{{ active == 'user' }}" />
+      <image class="icon" src="https://laoniu.yishan.cloud/static/user.png" alt="" wx:else />
+      <view class="text">我的</view>
+    </view>
+  </t-tab-bar-item>
+</t-tab-bar>

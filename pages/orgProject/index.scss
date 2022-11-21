@@ -1,0 +1,93 @@
+/* pages/projectList/index.wxss */
+
+.header_title {
+  font-size: 32rpx;
+  line-height: 44rpx;
+  font-weight: bold;
+  color: #06041C;
+}
+
+.nav {
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #06041C;
+  line-height: 28px;
+}
+
+.nav .desc {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.title {
+
+  font-weight: bold;
+  color: #000000;
+  font-size: 32rpx;
+}
+
+.card+.card {
+  margin-top: 28rpx;
+}
+
+.project_li .title {
+  margin-bottom: 18rpx;
+}
+
+.project_li .project_nav .desc {
+  margin-left: 26rpx;
+}
+
+.project_nav {
+  margin: -14rpx -14rpx 12rpx -14rpx;
+  .tag_li{
+    margin: 14rpx;
+  }
+}
+
+.desc {
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #06041C;
+  line-height: 32rpx;
+}
+
+.more {
+  margin-top: 26rpx;
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #ACACAE;
+  line-height: 28px;
+}
+
+.project_con {
+  font-size: 11px;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #727171;
+  line-height: 22px;
+}
+.label{
+  font-size: 24rpx;
+color: #ACACAE;
+line-height: 36rpx;
+margin-right: 12rpx;
+}
+
+/* 月增加 */
+.project_y .title{
+  font-size: 28rpx;
+}
+.project_li .project_nav .nd_time {
+  margin-left: 0;
+}
+.nd_timey {
+  margin-left: 0;
+  margin-bottom: 20rpx;
+}
+.procon{
+  font-size: 24rpx;
+}

@@ -1,0 +1,25 @@
+<view class="app-container">
+  <view class="flex middle between card nav" bindtap = "handleSearchRoute">
+    <view class="header_title">年度公益项目</view>
+    <view class="flex middle desc">
+      筛选
+      <t-icon name="chevron-right" size="22rpx" data-name="chevron-right" />
+    </view>
+  </view>
+  <view class="card project_li project_y" wx:for="{{ projectList }}"  id = "{{ item.id }}" bindtap="handleProjectRoute">
+    <view class="title">{{ item.xiangmmch }}</view>
+    <view class=" flex middle wrap project_nav">
+      <lingy-tag class = "tag_li" wx:for = "{{ item.guanzhly }}" title = "{{ item }}"/>
+      
+    </view>
+    <view class="desc nd_time nd_timey">
+        <!-- <text class="label">地点</text>{{ item.xiangmnd }} -->
+        <text class="label">时间</text>{{ item.xiangmnd }}
+      </view>
+    <view class="line-hidden3 project_con procon">
+      {{ item.xiangmjj || '--' }}
+    </view>
+  </view>
+  <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ projectList.length == 0 }}" />
+  <view wx:elif="{{projectList.length == total}}" class="text-center more">没有更多数据</view>
+</view>

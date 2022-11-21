@@ -1,0 +1,13 @@
+<view class="app-container">
+  <view class="app-card">
+    <view class="title">
+      {{ newDetail.zixbt }}
+    </view>
+    <view class="desc">
+      <text class="tip">{{ newDetail.fabjg || '--' }}</text>
+      <text class="time">{{ newDetail.fabshj || '--' }}</text>
+    </view>
+    <rich-text class="content" nodes="{{ newDetail.zixzhw }}">
+    </rich-text>
+  </view>
+</view>

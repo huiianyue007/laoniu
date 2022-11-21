@@ -1,0 +1,19 @@
+<view class="app-container">
+  <t-swipe-cell wx:for="{{ newsList }}" wx:key="index" data-id="{{ item.id }}" data-url="fundsDetail" bindtap="handleRoute">
+    <view class="news_list">
+      <t-image t-class="news_image" src="{{item.logo}}" mode="aspectFit" error="slot">
+        <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+      </t-image>
+      <view class="news_con news_li_con">
+        <view class="title">{{ item.mingch }}</view>
+        <view class="desc">公益支出：{{ item.gongyshyzhch }}万元</view>
+        <view class="desc">成立时间:{{ item.chenglshj }}</view>
+      </view>
+    </view>
+    <view slot="right" class="t-swipe-cell-demo-btn delete-btn" id="{{ item.id }}" bind:tap="onDelete">
+      删除
+    </view>
+  </t-swipe-cell>
+  <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ newsList.length == 0 }}" />
+  <view class="text-center more moreyue" wx:else>没有更多</view>
+</view>

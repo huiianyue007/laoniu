@@ -1,0 +1,21 @@
+/* pages/feedBack/index.wxss */
+.btn{
+  margin-top: 50rpx;
+}
+.card{
+  padding: 0 !important;
+}
+.card-int input{
+  font-size: 24rpx;
+}
+.card-int .t-cell__title-text{
+  font-size: 24rpx;
+}
+.card-int .t-textarea__wrapper{
+  font-size: 24rpx !important;
+}
+.card-int .t-textarea__wrapper-textarea, 
+.card-int .t-textarea__placeholder,
+.card-int .t-textarea__count{
+  font-size: 24rpx !important;
+}

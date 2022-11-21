@@ -1,0 +1,144 @@
+/* pages/list/list.wxss */
+page {
+  background-color: #F6F7FB;
+}
+
+.page {
+  padding: 28rpx 28rpx calc(env(safe-area-inset-bottom) + 132rpx);
+  box-sizing: border-box;
+  --td-search-bg-color: #fff;
+
+  .news_image {
+    width: 212rpx;
+    height: 138rpx;
+  }
+
+  .custom-tabs {
+    .t-tabs__item {
+      min-width: 180rpx;
+    }
+
+    t-tab-panel {
+      text-align: center;
+      justify-content: center;
+      background-color: #F6F7FB;
+      color: rgba(0, 0, 0, 0.26);
+    }
+  }
+}
+
+.search {
+  box-shadow: 0rpx 6rpx 12rpx 2rpx #EDECEB;
+}
+
+.search_card {
+  background: #FFFFFF;
+  box-shadow: 0px 12rpx 12rpx 2rpx #EDECEB;
+  border-radius: 16rpx;
+  margin-top: 28rpx;
+  overflow: hidden;
+
+  .title {
+    margin: 0;
+  }
+
+  .desc {
+    margin: 0;
+  }
+}
+
+.news_cards {
+  padding-top: 10rpx;
+}
+
+.tip {
+  position: absolute;
+  width: 56rpx;
+  height: 80rpx;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  padding: 12rpx 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('https://laoniu.yishan.cloud/static/list/tip.png') no-repeat top center/contain;
+
+  &.active {
+    background: url('https://laoniu.yishan.cloud/static/list/tip-active.png') no-repeat top center/contain;
+  }
+}
+
+.tip .text {
+  color: #fff;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.tip .text-title {
+  font-size: 20rpx;
+  line-height: 20rpx;
+}
+
+.news_list {
+  position: relative;
+}
+
+.card+.card {
+  margin-top: 28rpx;
+}
+
+
+// 月新增
+.news_list .news_li_con {
+  flex: 1;
+}
+
+.news_list .news_li_con .title {
+  flex: initial;
+  margin-bottom: 20rpx;
+}
+
+.news_list .news_image {
+  width: 220rpx;
+  height: 128rpx;
+  background-color: #fafafa;
+}
+
+.news_list .news_li_con .desc {
+  padding-top: 6rpx;
+}
+
+.news_list .news_li_con .desc+.desc {
+  color: #acacae;
+}
+
+.search_card {
+  .title {
+    font-size: 28rpx;
+  }
+}
+
+.search_sea {
+  margin-top: 0;
+}
+
+.tip {
+  background: none;
+
+  &.active {
+    background: url('https://laoniu.yishan.cloud/static/list/tip-active.png') no-repeat top center/contain;
+  }
+
+  .text {
+    display: none;
+  }
+
+  &.active .text {
+    display: block;
+  }
+}

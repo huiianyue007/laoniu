@@ -1,0 +1,11 @@
+<view class="page app-container">
+  <view class="card">
+    <t-cell title="隐私政策" hover arrow url="/pages/privacyPolicy/index">
+    </t-cell>
+    <t-cell title="用户协议" hover arrow url="/pages/userAgree/index">
+    </t-cell>
+  </view>
+  <view class="text-center btn">
+    <t-button t-class="external-class" block bindtap="handleSubmit">退出登录</t-button>
+  </view>
+</view>

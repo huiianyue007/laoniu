@@ -1,0 +1,25 @@
+<view class="app-container">
+  <view class="header_title">{{ title }}合作的慈善组织</view>
+  <view class="flex middle cishan_li cishan_y" wx:for="{{ orgList }}" id="{{ item.id }}" bindtap="handleRoute">
+    <t-image src="{{ item.logo }}" t-class="cs_image" mode="aspectFit" error="slot">
+      <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+    </t-image>
+    <view class="cs_con">
+      <view class="title">{{ item.mingch }}</view>
+      <view class="desc">
+        <text class="label">捐赠次数</text>
+        {{ item.shijcount }}
+      </view>
+      <view class="desc">
+        <text class="label">统计年度</text>
+        {{ item.niand }}
+      </view>
+      <view class="desc">
+        <text class="label">捐赠金额</text>
+        {{ item.juanzje }} 元
+      </view>
+    </view>
+  </view>
+  <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ orgList.length == 0 }}" />
+  <view wx:elif="{{orgList.length == total}}" class="text-center more">没有更多数据</view>
+</view>

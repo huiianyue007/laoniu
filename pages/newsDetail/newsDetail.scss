@@ -1,0 +1,30 @@
+.app-card {
+  padding: 26rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #06041C;
+  line-height: 28rpx;
+}
+
+.desc {
+  margin: 28rpx 0;
+}
+
+.tip {
+  color: #EE793F;
+  margin-right: 26rpx;
+}
+.content{
+  line-height: 48rpx;
+}
+// 月调整
+.app-card{
+  .title{
+    line-height: 44rpx;
+  }
+}

@@ -1,0 +1,138 @@
+.page {
+  --td-search-bg-color: transparent;
+  --td-search-text-color: #fff;
+  --td-search-placeholder-color: #fff;
+  --td-search-icon-color: #fff;
+  --td-search-action-color: #fff;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 104rpx);
+  box-sizing: border-box;
+  .t-navbar__left {
+    width: 274rpx !important;
+  }
+  .t-search__input-box {
+    .t-icon {
+      color: #fff !important;
+    }
+  }
+}
+
+.img_content {
+  height: 420rpx;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 16rpx 28rpx;
+  box-sizing: border-box;
+  color: #fff;
+
+  .banner_title {
+    margin: 62rpx 34rpx 46rpx;
+    font-size: 48rpx;
+  }
+
+  .ban_desc {
+    margin: 0 34rpx;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    &.mt14{
+      margin-top: 28rpx;
+    }
+  }
+
+  .banner_con_title {
+    font-size: 72rpx;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 72rpx;
+  }
+}
+
+.home_con {
+  padding: 28rpx;
+  box-sizing: border-box;
+
+  .nav_bar {
+    margin-bottom: 28rpx;
+    overflow: hidden;
+    padding: 4rpx 28rpx;
+    .nav-bar-image {
+      height: 28rpx;
+      margin-right: 12rpx;
+    }
+
+    .title {
+      white-space: nowrap;
+      margin-bottom: 0;
+    }
+
+    .split {
+      width: 0px;
+      height: 28rpx;
+      border: 2rpx solid #707070;
+      margin: 0 26rpx;
+    }
+
+    .nav_desc {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 28rpx;
+      & +.nav_desc{
+        margin-left: 40rpx;
+        border-left: 1px solid #707070;
+        padding-left: 40rpx;
+      }
+    }
+  }
+
+  .scroll_wrap {
+    display: inline-flex;
+  }
+
+  .notice-bar {
+    color: #06041C;
+    background-color: #fff;
+  }
+
+  .card+.card {
+    margin-top: 28rpx;
+  }
+
+  .card_con {
+    margin-top: 28rpx;
+  }
+
+  .nav_img {
+    width: 180rpx;
+    height: 100rpx;
+  }
+
+  .zu_li+.zu_li {
+    margin-left: 28rpx;
+  }
+}
+
+// 月调整
+.home_con{
+  .nav_img {
+    width: 195rpx;
+    height: 128rpx;
+    background-color: #fafafa;
+  }
+}
+.news_list{
+  .news_li_con{
+    flex: 1;
+    .desc + .desc{
+      color: #acacae;
+    }
+    .title{
+      flex: initial;
+    }
+  }
+}
+.gd-list{
+  overflow: hidden;
+}
+.gd-list .t-notice-bar{
+  padding-right: 0;
+}

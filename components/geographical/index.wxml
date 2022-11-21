@@ -1,0 +1,4 @@
+<view class="card">
+  <view class="title">地域分布</view>
+  <map id="mapId" class="map chart_con" scale = "4" latitude="{{latitude}}" longitude="{{longitude}}"></map>
+</view>

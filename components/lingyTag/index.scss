@@ -1,0 +1,45 @@
+/* components/lingyTag/index.wxss */
+.t-tag{
+  font-size: 24rpx;
+  padding: 4rpx 20rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  border-width: 2rpx;
+  border-style: solid;
+  &.jiaoyu{
+    border-color: #51B3F9;
+    color: #51B3F9;
+  }
+  &.yiliaoweisheng{
+    border-color: #E95863;
+    color: #E95863;
+  }
+  &.wenhuayishu{
+    border-color: #6C70C8;
+    color: #6C70C8;
+  }
+  &.tiyu{
+    border-color: #F7C544;
+    color: #F7C544;
+  }
+  &.fupinjikun{
+    border-color: #EE793F;
+    color: #EE793F;
+  }
+  &.shengtaihuanjing{
+    border-color: #5BC8A3;
+    color: #5BC8A3;
+  }
+  &.zaihaijiuzhu{
+    border-color:  #4482F7;
+    color:  #4482F7;
+  }
+  &.zhiyuanfuwu{
+    border-color: #9F51F9;
+    color: #9F51F9;
+  }
+  &.xiangcunzhenxing{
+    border-color: #98B1F5;
+    color: #98B1F5;
+  }
+}

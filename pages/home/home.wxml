@@ -1,0 +1,103 @@
+<view class="page">
+  <t-navbar leftIcon="slot" t-class-left="external-class-left" background="#EE793F">
+    <image src="https://laoniu.yishan.cloud/static/home/logo.png" mode="widthFix" class="logo" slot="left-icon"></image>
+  </t-navbar>
+  <t-swiper current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" height="420" interval="{{interval}}" navigation="{{navigation}}" loop="{{ loop }}" paginationPosition="{{paginationPosition}}">
+    <t-swiper-item>
+      <view class="img_content" style="background-image: url('https://laoniu.yishan.cloud/static/home/banner-1.png');">
+        <searchBar placeholder="查找基金会" active="0" theme="dark" class="search"></searchBar>
+        <view class="banner_title">家族基金会数量</view>
+        <view class="ban_desc">
+          <text class="banner_con_title">{{ jiazNum }}</text>
+          家
+        </view>
+      </view>
+    </t-swiper-item>
+    <t-swiper-item>
+      <view class="img_content" style="background-image: url('https://laoniu.yishan.cloud/static/home/banner-2.png');">
+        <searchBar placeholder="查找基金会" active="0" theme="dark" class="search"></searchBar>
+        <view class="banner_title">认定为慈善组织数量</view>
+        <view class="ban_desc">
+          <text class="banner_con_title">{{ cishzzhNum }}</text>
+          家
+        </view>
+      </view>
+    </t-swiper-item>
+    <t-swiper-item>
+      <view class="img_content" style="background-image: url('https://laoniu.yishan.cloud/static/home/banner-3.png');">
+        <searchBar placeholder="查找基金会" active="0" theme="dark" class="search"></searchBar>
+        <view class="banner_title">家族基金会总资产</view>
+        <view class="ban_desc">
+          <text class="banner_con_title">{{ zongzch }}亿</text>
+          元
+        </view>
+      </view>
+    </t-swiper-item>
+    <t-swiper-item>
+      <view class="img_content" style="background-image: url('https://laoniu.yishan.cloud/static/home/banner-4.png');">
+        <searchBar placeholder="查找基金会" active="0" theme="dark" class="search"></searchBar>
+        <view class="banner_title">累计慈善捐赠额</view>
+        <view class="ban_desc">
+          <text class="banner_con_title">{{ leijgyzhc }}亿</text>
+          元
+        </view>
+        <view class="ban_desc mt14">统计年度：2019 - {{ yestYear }}</view>
+      </view>
+    </t-swiper-item>
+  </t-swiper>
+  <view class="home_con">
+    <view class="flex middle card nav_bar" wx:if="{{newsData.length}}">
+      <view class="flex middle">
+        <image src="https://laoniu.yishan.cloud/static/home/news.png" mode="heightFix" class="nav-bar-image"></image>
+        <view class="title">最新动态</view>
+      </view>
+      <view class="gd-list">
+        <t-notice-bar visible="{{true}}" prefixIcon="null" marquee="{{marquee}}" t-class="notice-bar">
+          <view slot="content">
+            <div class="scroll_wrap" slot="content">
+              <view class="nav_desc" wx:for="{{ newsData }}" wx:key="index" bindtap="handleRoute" id="{{ item.id }}">
+                {{ item.zixbt }}
+              </view>
+            </div>
+          </view>
+        </t-notice-bar>
+      </view>
+    </view>
+    <geographical />
+    <view class="card mt14 zu">
+      <view class="flex between middle title">
+        中国家族基金会
+        <t-icon name="ellipsis" size="24" data-name="ellipsis" bind:click="getMoreFamData" />
+      </view>
+      <view class="flex card_con">
+        <view class="fill zu_li" wx:for="{{ famData }}" wx:key="index" id="{{ item.id }}" bindtap="handleFamRoute">
+          <!-- mode 之前用 aspectFill ，改成了 aspectFit -->
+          <t-image t-class="nav_img" src="{{ item.logo }}" mode="aspectFit" error="slot">
+            <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+          </t-image>
+        </view>
+      </view>
+    </view>
+    <view class="card">
+      <view class="flex between middle title">
+        家族基金会资讯
+        <t-icon name="ellipsis" size="24" data-name="ellipsis" bind:click="getMoreNewData" />
+      </view>
+      <view class="card_con">
+        <view class="news_list" wx:for="{{ newsList }}" wx:key="index" bindtap="handleRoute" id="{{ item.id }}">
+          <t-image t-class="news_image" src="{{item.zixtp}}" mode="aspectFit" error="slot">
+            <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+          </t-image>
+          <view class="news_li_con">
+            <view class="title">
+              <view class="line-hidden2">{{ item.zixbt }}</view>
+            </view>
+            <view class="text-hidden desc">{{ item.zhaiy || '--' }}</view>
+            <view class="desc">{{ item.fabshj }}</view>
+          </view>
+        </view>
+        <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ newsList.length == 0 }}" />
+      </view>
+    </view>
+  </view>
+</view>

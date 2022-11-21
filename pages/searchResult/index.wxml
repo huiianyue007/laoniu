@@ -1,0 +1,100 @@
+<view class="page app-container">
+  <t-search model:value="{{value}}" shape="round" placeholder="请输入关键词" bind:submit="handleSubmit" />
+  <t-tabs value="{{active}}" bind:change="handleChangeTab" sticky t-class="custom-tabs">
+    <t-tab-panel label="家族基金会" value="0">
+      <view class="total">
+        为您搜索到
+        <text class="total_con">{{ total }}</text>
+        条数据
+      </view>
+      <t-loading theme="circular" size="40rpx" wx:if="{{ loading }}"></t-loading>
+      <block wx:else>
+        <view class="news_list" wx:for="{{ dataList }}" wx:key="index" data-id="{{ item.id }}" data-url="fundsDetail" bindtap="handleRoute">
+          <t-image t-class="external-class" src="{{item.logo}}" mode="aspectFit" error="slot">
+            <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+          </t-image>
+          <view class="news_con news_conyue">
+            <view class="title">{{ item.mingch }}</view>
+            <view class="desc">公益支出：{{ item.zongzch || '--' }}万元</view>
+            <view class="desc">统计年度：{{ item.niand }}</view>
+            <view class="desc">成立时间:{{ item.chenglshj }}</view>
+          </view>
+        </view>
+        <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ dataList.length == 0 }}" />
+      </block>
+    </t-tab-panel>
+    <t-tab-panel label="慈善组织" value="1">
+      <view class="total">
+        为您搜索到
+        <text class="total_con">{{ total }}</text>
+        条数据
+      </view>
+      <t-loading theme="circular" size="40rpx" wx:if="{{ loading }}"></t-loading>
+      <block wx:else>
+        <view class="news_list" wx:for="{{ dataList }}" wx:key="index" data-id="{{ item.id }}" data-url="orgDetail" bindtap="handleRoute">
+          <t-image t-class="external-class" src="{{item.logo}}" mode="aspectFit" error="slot">
+            <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+          </t-image>
+          <view class="news_con news_conyue">
+            <view class="title">{{ item.mingch }}</view>
+            <view class="desc">捐赠收入：{{ item.juanzshr || '--' }}万元</view>
+            <view class="desc">统计年度：{{ item.niand }}</view>
+            <view class="desc">成立时间:{{ item.chenglshj }}</view>
+          </view>
+        </view>
+        <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ dataList.length == 0 }}" />
+      </block>
+    </t-tab-panel>
+    <t-tab-panel label="新闻资讯" value="2">
+      <view class="total">
+        为您搜索到
+        <text class="total_con">{{ total }}</text>
+        条数据
+      </view>
+      <t-loading theme="circular" size="40rpx" wx:if="{{ loading }}"></t-loading>
+      <block wx:else>
+        <view class="news_list" wx:for="{{ dataList }}" wx:key="index" bindtap="handlezixunRoute" id="{{ item.id }}">
+          <t-image t-class="external-class" src="{{item.zixtp}}" mode="aspectFit" error="slot">
+            <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+          </t-image>
+          <view class="news_con news_conyue">
+            <view class="line-hidden2 title">{{ item.zixbt }}</view>
+            <view class="text-hidden desc">{{ item.zhaiy || '--' }}</view>
+            <view class="desc">{{ item.fabshj }}</view>
+          </view>
+        </view>
+        <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ dataList.length == 0 }}" />
+      </block>
+    </t-tab-panel>
+    <t-tab-panel label="项目名称" value="3">
+      <view class="total">
+        为您搜索到
+        <text class="total_con">{{ total }}</text>
+        条数据
+      </view>
+      <t-loading theme="circular" size="40rpx" wx:if="{{ loading }}"></t-loading>
+      <block>
+        <view class="news_list" wx:for="{{ dataList }}" wx:key="index" id="{{ item.id }}" bindtap="handleProjectRoute">
+          <view class="news_con news-cony">
+            <view class="line-hidden2 title">{{ item.xiangmmch }}</view>
+            <!-- <view class=" flex middle project_nav">
+            <t-tag wx:if="{{item.guanzhly.length > 0}}" variant="outline" theme="primary" wx:for="{{item.guanzhly}}" wx:for-item="ll">
+              {{ ll }}
+            </t-tag>
+
+          </view> -->
+            <view class=" flex middle wrap  project_tz">
+              <lingy-tag class="tag_li" wx:for="{{ item.guanzhly }}" title="{{ item }}" />
+            </view>
+            <view class="desc nd_timey">
+              <text class="label">时间</text>
+              {{ item.xiangmnd }}
+            </view>
+            <view class="line-hidden3 project_con">{{ item.xiangmjj }}</view>
+          </view>
+        </view>
+        <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ dataList.length == 0 }}" />
+      </block>
+    </t-tab-panel>
+  </t-tabs>
+</view>

@@ -1,0 +1,115 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/data/data",
+    "pages/list/list",
+    "pages/news/news",
+    "pages/user/user",
+    "pages/newsDetail/newsDetail",
+    "pages/aboutUs/index",
+    "pages/dataDesc/index",
+    "pages/feedBack/index",
+    "pages/feedType/index",
+    "pages/setUp/index",
+    "pages/privacyPolicy/index",
+    "pages/userAgree/index",
+    "pages/myAttention/index",
+    "pages/searchResult/index",
+    "pages/fundsDetail/index",
+    "pages/auth/index",
+    "pages/financialData/index",
+    "pages/orgList/index",
+    "pages/orgProject/index",
+    "pages/orgDetail/index",
+    "pages/paymentList/index",
+    "pages/projectList/index",
+    "pages/orgZiEvent/index",
+    "pages/projectDetail/index",
+    "pages/fundsOrgList/index",
+    "pages/rankDetail/index",
+    "pages/screenFunds/index",
+    "pages/fundsList/index",
+    "pages/selectYear/index",
+    "pages/newList/index"
+  ],
+  "requiredPrivateInfos": [
+    "getFuzzyLocation"
+  ],
+  "permission": {
+    "scope.userFuzzyLocation": {
+      "desc": "你的位置信息将便于搜索"
+    },
+    "requiredPrivateInfos": [
+      "getFuzzylocation"
+    ]
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#666666",
+    "selectedColor": "#FF5F15",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/data/data",
+        "text": "数据"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "榜单"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "资讯"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "areaConc": "./components/areaConc/index",
+    "financialOverView": "./components/financialOverView/index",
+    "geographical": "./components/geographical/index",
+    "searchBar": "./components/searchBar/searchBar",
+    "lingy-tag": "./components/lingyTag/index",
+    "ec-canvas": "./components/ec-canvas/ec-canvas",
+    "t-search": "tdesign-miniprogram/search/search",
+    "t-swipe-cell": "tdesign-miniprogram/swipe-cell/swipe-cell",
+    "t-swiper": "tdesign-miniprogram/swiper/swiper",
+    "t-swiper-item": "tdesign-miniprogram/swiper/swiper-item",
+    "t-swiper-nav": "tdesign-miniprogram/swiper/swiper-nav",
+    "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
+    "t-tab-bar-item": "tdesign-miniprogram/tab-bar/tab-bar-item",
+    "t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "t-action-sheet": "tdesign-miniprogram/action-sheet/action-sheet",
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tabs/tab-panel",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
+    "t-checkbox-group": "tdesign-miniprogram/checkbox-group/checkbox-group",
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-loading": "tdesign-miniprogram/loading/loading",
+    "t-toast": "tdesign-miniprogram/toast/toast"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

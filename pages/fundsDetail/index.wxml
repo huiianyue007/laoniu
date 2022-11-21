@@ -1,0 +1,290 @@
+<view class="app-container container">
+  <view class="card base">
+    <!-- 下面view添加了 card_con 这个样式 -->
+    <view class="flex between card_con card_conyue header">
+      <view class="con">
+        <view class="title">{{ baseInfo.mingch }}</view>
+        <view class="desc">
+          <text class="label">地点</text>
+          {{ baseInfo.suozsheng || '--' }}{{  baseInfo.suozshi || '--'}}
+        </view>
+      </view>
+      <!-- 增加了图片  mode="aspectFit" -->
+      <t-image src="{{ baseInfo.logo }}" t-class="logo" mode="aspectFit" error="slot">
+        <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+      </t-image>
+    </view>
+    <view class="card_con card_conyue company">
+      <view class="title">家族基金会信息</view>
+      <view class="desc form_item">
+        <text class="label">法人全称</text>
+        {{ baseInfo.farqch }}
+      </view>
+      <view class="desc form_item">
+        <text class="label">员工规模</text>
+        {{ baseInfo.yuangm }}
+      </view>
+      <view class="desc form_item">
+        <text class="label">成立时间</text>
+        {{ baseInfo.chenglshj }}
+      </view>
+    </view>
+    <view class="card_con card_conyue star">
+      <view class="title">关注领域</view>
+      <view class="tag_con">
+        <view class="ly_yue">
+          <lingy-tag class="tag_li" title="{{ item }}" wx:for="{{ baseInfo.guanzhly }}" />
+        </view>
+        <view wx:if="{{ baseInfo.guanzhly.length == 0 }}" class="empty_desc empty_descyue">
+          暂无关注领域
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="title">家族基金会简介</view>
+    <view class="company_desc {{ showAll ? '' : 'hidden' }}">
+      {{ baseInfo.jianj || '--' }}
+      <view class="shadow" wx:if="{{!showAll}}"></view>
+    </view>
+    <view class="flex middle center text-center show_all" wx:if="{{!showAll}}" bindtap="showDescAll">
+      <t-icon name="chevron-down" size="24" data-name="chevron-down" />
+    </view>
+    <view class="flex middle center  text-center show_all" wx:else bindtap="hiddenDescAll">
+      <t-icon name="chevron-up" size="24" data-name="chevron-up" />
+    </view>
+  </view>
+  <view class="card regulatory_info">
+    <view class="title">监管信息</view>
+    <view class="regulatory_info_con">
+      <view class="regulatory_info_li">
+        <view class="title regulatory_info_title">{{ baseInfo.pinggdj || '--' }}</view>
+        <view class="regulatory_info_desc">评估等级</view>
+      </view>
+      <view class="regulatory_info_li">
+        <view class="title regulatory_info_title">{{ baseInfo.zhucddj || '--' }}</view>
+        <view class="regulatory_info_desc">登记单位</view>
+      </view>
+      <view class="regulatory_info_li">
+        <view class="title regulatory_info_title">{{ baseInfo.shifrendcshzzh || '--' }}</view>
+        <view class="regulatory_info_desc">是否认定为慈善组织</view>
+      </view>
+      <view class="regulatory_info_li">
+        <view class="title regulatory_info_title">{{ baseInfo.zhuczj || '--' }}</view>
+        <view class="regulatory_info_desc">注册资金</view>
+      </view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="title">业务范围</view>
+    <view class="tag_con" wx:if="{{ baseInfo.yewfw != null && baseInfo.yewfw.length > 0 }}">
+      <view>
+        <!-- <t-tag class="tag_li" variant="outline" theme="primary" wx:for="{{ baseInfo.yewfw }}">
+          {{ item }}
+        </t-tag> -->
+        <view class="fw-con">{{ baseInfo.yewfw }}</view>
+      </view>
+    </view>
+    <view wx:else class="empty_desc">暂无业务范围</view>
+  </view>
+  <view class="card">
+    <view class="title">奖项名称</view>
+    <view class="jiang">
+      <view class="jiang_li" wx:for="{{baseInfo.jiangxlist}}" wx:key="index">
+        荣获{{ item.jiangxmch }}
+      </view>
+      <view wx:if="{{ baseInfo.jiangxlist.length == 0 }}" class="empty_desc">暂无奖项</view>
+    </view>
+  </view>
+  <financialOverView class="areaConc" data="{{ caiwndList }}" initFlag="{{ false }}">
+    <view class="flex middle between title">
+      财务概况
+      <t-icon name="ellipsis" size="24" data-name="ellipsis" id="/pages/financialData/index?id={{ id }}" bind:click="handleRoute" />
+    </view>
+  </financialOverView>
+  <areaConc class="areaConc" unit="万元" data="{{ ywhdly }}" initFlag="{{ false }}">
+    <view class="title">业务活动支出</view>
+  </areaConc>
+  <view class="card mt14">
+    <view class="title">团队成员</view>
+    <view class="tuan">
+      <view class="tuan_li" wx:for="{{ baseInfo.tuandlist }}" data-index="{{ index }}">
+        <t-image src="{{ item.photo }}" shape="circle" t-class="tuan_image" mode="aspectFit" error="slot">
+          <image slot="error" src="https://laoniu.yishan.cloud/static/people.png" mode="widthFix"></image>
+        </t-image>
+        <view class="title">{{ item.name }}</view>
+        <view class="desc">{{ item.zhiw }}</view>
+      </view>
+      <!-- <view class="tuan_li" wx:for="{{ baseInfo.tuandlist }}" data-index="{{ index }}" bindtap="handleShowTuan">
+        
+        <view class="title">{{ item.name }}</view>
+        <view class="desc">{{ item.zhiw }}</view>
+      </view> -->
+      <view wx:if="{{ baseInfo.tuandlist.length == 0 }}" class="empty_desc">暂无团队成员</view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="title">家族信息</view>
+    <view class="flex middle jiaz">
+      <!-- mode 之前用 aspectFill ，改成了 aspectFit -->
+      <!-- <image src="{{ baseInfo.jiazqy && baseInfo.jiazqy.logo }}" class="jia_image" mode="aspectFit" /> -->
+      <view class="jia_con jia_y jia_list">
+        <view class="desc">
+          <text class="label">企业家:</text>
+          {{  baseInfo.jiazqy && baseInfo.qiyj || '--' }}
+        </view>
+        <view class="desc">
+          <text class="label">家族企业:</text>
+          {{ baseInfo.jiazqy && baseInfo.jiazqy.jigm || '--' }}
+        </view>
+        <view class="desc">
+          <text class="label">家族所属行业:</text>
+          {{  baseInfo.jiazqy && baseInfo.jiazqy.suoshhy || '--' }}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="card cishan">
+    <view class="flex middle between title">
+      合作慈善组织
+      <t-icon name="ellipsis" size="24" data-name="ellipsis" id="{{ '/pages/orgList/index?id=' + baseInfo.id + '&title=' + baseInfo.mingch }}" bind:click="handleRoute" />
+    </view>
+    <view class="cishan_con">
+      <view class="flex middle cishan_li" wx:for="{{ cpList }}" id="{{ item.id }}" bindtap="handleCpRoute">
+        <t-image src="{{ item.logo }}" t-class="cs_image" mode="aspectFit" error="slot">
+          <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+        </t-image>
+        <view class="cs_con">
+          <view class="title">{{ item.mingch }}</view>
+          <view class="desc">
+            <text class="label">捐赠次数</text>
+            {{ item.shijcount }}
+          </view>
+          <view class="desc">
+            <text class="label">统计年度</text>
+            {{ item.niand }}
+          </view>
+          <view class="desc">
+            <text class="label">捐赠金额</text>
+            {{ item.juanzje }} 元
+          </view>
+        </view>
+      </view>
+      <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ cpList.length == 0 }}" />
+    </view>
+  </view>
+  <view class="card zhifu">
+    <view class="flex middle between title">
+      大额支付事件
+      <t-icon name="ellipsis" size="24" data-name="ellipsis" id="{{ '/pages/paymentList/index?id=' + baseInfo.id }}" bind:click="handleRoute" />
+    </view>
+    <view class="zhifu_con">
+      <view class="zhifu_li" wx:for="{{ enevtList }}">
+        <view class="flex between">
+          <text class="title">{{ item.mujmch }}</text>
+        </view>
+        <view class="desc">
+          <text class="label">资助金额</text>
+          {{ item.zizhje }} 元
+        </view>
+        <view class="desc">
+          <text class="label">资助年度</text>
+          {{ item.zizhshj }}
+        </view>
+        <view class="desc">
+          <text class="label">资助用途</text>
+          {{ item.zizhyt || '--' }}
+        </view>
+      </view>
+      <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ enevtList.length == 0 }}" />
+    </view>
+  </view>
+  <view class="card project">
+    <view class="flex middle between title">
+      年度公益项目
+      <t-icon name="ellipsis" size="24" data-name="ellipsis" id="{{ '/pages/projectList/index?id=' + baseInfo.id }}" bind:click="handleRoute" />
+    </view>
+    <view class="project_con">
+      <view class="project_li pro_yue" wx:for="{{ projectList }}" id="{{ item.id }}" bindtap="handleProjectRoute">
+        <view class="title">{{ item.xiangmmch }}</view>
+        <view class=" flex middle project_nav project_tz">
+          <lingy-tag class="tag_li" wx:for="{{ item.guanzhly }}" title="{{ item }}" />
+        </view>
+        <view class="desc nd_time">
+          <text class="label">时间</text>
+          {{ item.xiangmnd }}
+        </view>
+        <rich-text class="project_li_con line-hidden3" nodes="{{ item.xiangmjj }}" />
+      </view>
+      <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ projectList.length == 0 }}" />
+    </view>
+  </view>
+  <view class="card news">
+    <view class="flex middle between title">
+      相关资讯
+      <t-icon name="ellipsis" size="24" data-name="ellipsis" id="{{ '/pages/newList/index?id=' + baseInfo.id }}" bind:click="handleRoute" />
+    </view>
+    <view class="news_con">
+      <view class="news_list" wx:for="{{ newsList }}" bindtap="handleRoute" id="/pages/newsDetail/newsDetail?id={{item.id}}">
+        <t-image src="{{ item.zixtp }}" mode="aspectFill" t-class="news_image" error="slot">
+          <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+        </t-image>
+        <view class="news_li_con">
+          <view class="title">{{ item.zixbt }}</view>
+          <view class="text-hidden desc">{{ item.zhaiy || '--' }}</view>
+          <view class="desc">{{ item.fabshj }}</view>
+        </view>
+      </view>
+      <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ newsList.length == 0 }}" />
+    </view>
+  </view>
+  <view class="card">
+    <view class="title">联系方式</view>
+    <view class="lianx">
+      <view class="lian_li">
+        <text class="label">联系电话:</text>
+        <text class="desc">{{ baseInfo.lianxdh || '--' }}</text>
+      </view>
+      <view class="lian_li">
+        <text class="label">联系邮箱:</text>
+        <text class="desc">{{ baseInfo.lianxyx || '--' }}</text>
+      </view>
+      <view class="lian_li">
+        <text class="label">办公地址:</text>
+        <text class="desc">{{ baseInfo.bangdzh || '--' }}</text>
+      </view>
+      <view class="lian_li">
+        <text class="label">官网地址:</text>
+        <text class="desc">{{ baseInfo.guanw || '--' }}</text>
+      </view>
+      <view class="lian_li">
+        <text class="label">微信公众号:</text>
+        <text class="desc">{{ baseInfo.weixgzhh || '--' }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <t-button t-class="external-class" theme="primary" wx:if="{{ baseInfo.shifgzh }}" block bindtap="handleNoSubmit">
+      取消关注
+    </t-button>
+    <t-button t-class="external-class" theme="primary" wx:else block bindtap="handleSubmit">
+      关注
+    </t-button>
+  </view>
+  <t-popup visible="{{visible}}" prevent-scroll-through="{{true}}" bind:visible-change="onVisibleChange" placement="bottom" close-btn="{{ true }} ">
+    <view class="prop">
+      <swiper indicator-dots class="prop_content prop_gcon" indicator-active-color="#EE793F" indicator-color="#F6F7FB">
+        <swiper-item wx:for="{{ baseInfo.tuandlist }}">
+          <scroll-view>
+            <view class="text-center prop_header">
+              <!-- <t-image src="{{ activeTuan.photo }}" shape="circle" t-class="tuan_image"></t-image> -->
+            </view>
+            <view class="text-center title">{{ item.name }}</view>
+            <view class="text-center desc">{{ item.zhiw }}</view>
+            <view class="desc gcon_con">{{ item.jianj || '--' }}</view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </t-popup>
+</view>

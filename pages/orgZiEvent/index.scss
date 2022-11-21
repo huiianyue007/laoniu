@@ -1,0 +1,76 @@
+/* pages/payment/index.wxss */
+
+.header_title {
+  font-size: 32rpx;
+
+  font-weight: bold;
+  color: #06041C;
+  line-height: 28rpx;
+}
+
+.nav {
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #06041C;
+  line-height: 28px;
+}
+
+.nav .desc {
+  margin-top: 0;
+}
+
+.title {
+
+  font-weight: bold;
+  color: #000000;
+  font-size: 32rpx;
+}
+
+.card_header {
+  margin-bottom: 26rpx;
+}
+
+.card+.card {
+  margin-top: 28rpx;
+}
+
+.label {
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #ACACAE;
+  line-height: 32rpx;
+  margin-right: 10rpx;
+}
+
+.desc {
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #06041C;
+  line-height: 32rpx;
+  margin-top: 18rpx;
+}
+
+.more {
+  margin-top: 26rpx;
+  font-size: 24rpx;
+  font-family: Helvetica-Regular, Helvetica;
+  font-weight: 400;
+  color: #ACACAE;
+  line-height: 28px;
+}
+
+/* 月增加 */
+.card-y .title{
+  font-size: 28rpx;
+}
+.card-y .card_header{
+  margin-bottom: 0;
+}
+.tag_li{
+  &+.tag_li{
+    margin-left: 28rpx;
+  }
+}

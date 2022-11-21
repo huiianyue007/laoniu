@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="news_cards" wx:if="{{ filedData.length > 0 }}">
+    <view class="card" wx:for="{{ filedData }}" wx:key="index">
+      <view class="news_list">
+        <view class="tip {{ index < 3 ? 'active' : '' }}">
+          <view class="text">
+            <view class="text-title" wx:if="{{ index < 3 }}">TOP</view>
+            {{ item.index }}
+          </view>
+        </view>
+        <t-image t-class="news_image" src="{{item.logo}}" mode="aspectFit" error="slot">
+          <image slot="error" src="https://laoniu.yishan.cloud/static/image_error.png" mode="widthFix"></image>
+        </t-image>
+        <view class="news_li_con">
+          <view class="title">{{ item.mingch }}</view>
+          <view class="desc">{{ payLabel }}：{{ item.jine || '--' }}万元</view>
+          <view class="desc">成立时间：{{ item.chenglshj }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <t-empty t-class="empty-cls" icon="info-circle-filled" description="暂无数据" wx:if="{{ filedData.length == 0 }}" />
+</view>
